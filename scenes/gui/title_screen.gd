@@ -11,7 +11,7 @@ func _on_start_pressed():
 	$cover.show()
 	$cover/AnimationPlayer.play("close")
 	await $cover/AnimationPlayer.animation_finished
-	Global.change_scene("")
+	Global.change_scene("res://scenes/main/main.tscn")
 
 func _on_start_mouse_entered():
 	$start/icon.show()
