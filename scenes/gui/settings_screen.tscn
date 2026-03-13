@@ -1,0 +1,92 @@
+[gd_scene load_steps=9 format=3 uid="uid://ild61ihsg08f"]
+
+[ext_resource type="Script" uid="uid://hrgjkwjs4lcp" path="res://scenes/gui/settings_screen.gd" id="1_wqbck"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wtq5m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1g5r7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tisjd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t5t5x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_neeqe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wqbck"]
+font_color = Color(0.972549, 0.9019608, 0.8156863, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_w0sih"]
+font_color = Color(0.972549, 0.9019608, 0.8156863, 1)
+
+[node name="settings_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wqbck")
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1254902, 0.03137255, 0.08627451, 1)
+
+[node name="close" type="Button" parent="."]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 8.0
+offset_right = 244.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(0.2509804, 0.21176471, 0.2901961, 1)
+theme_override_colors/font_focus_color = Color(0.2509804, 0.21176471, 0.2901961, 1)
+theme_override_colors/font_hover_color = Color(0.6156863, 0.68235296, 0.7529412, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.6156863, 0.68235296, 0.7529412, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wtq5m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1g5r7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tisjd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_t5t5x")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_neeqe")
+text = "close"
+
+[node name="music_slider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 72.0
+offset_right = 168.0
+offset_bottom = 88.0
+max_value = 10.0
+value = 5.0
+
+[node name="music" type="Label" parent="."]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 56.0
+offset_right = 152.0
+offset_bottom = 72.0
+text = "music"
+label_settings = SubResource("LabelSettings_wqbck")
+
+[node name="sfx_slider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 120.0
+offset_right = 168.0
+offset_bottom = 136.0
+max_value = 10.0
+value = 5.0
+
+[node name="sfx" type="Label" parent="."]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 104.0
+offset_right = 144.0
+offset_bottom = 120.0
+text = "sfx"
+label_settings = SubResource("LabelSettings_w0sih")
+
+[connection signal="pressed" from="close" to="." method="_on_close_pressed"]
